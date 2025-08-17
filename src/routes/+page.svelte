@@ -1,3 +1,17 @@
-<h1>Welcome to your library project</h1>
-<p>Create your package using @sveltejs/package and preview/showcase your work with SvelteKit</p>
-<p>Visit <a href="https://svelte.dev/docs/kit">svelte.dev/docs/kit</a> to read the documentation</p>
+<script lang="ts">
+	import { Button } from '$lib/components';
+	import { pushAlert } from '$lib/components';
+</script>
+
+<div class="p-8">
+	<h1 class="text-2xl font-bold mb-4">MUI Svelte</h1>
+	<p class="mb-4">This is a demo page for the component library.</p>
+	<Button
+		variant="primary"
+		onclick={() => pushAlert({ title: 'Hello!', content: 'This is a snackbar from the main page.' })}
+	>
+		{#snippet children()}
+			Show Snackbar
+		{/snippet}
+	</Button>
+</div>
