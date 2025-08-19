@@ -1,9 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/svelte';
 import Button from './button.svelte';
-import { fn } from '@storybook/test';
-
-// A simple component to render children snippets in stories
-import Snippet from '../../stories/Snippet.svelte';
+import type { ButtonProps } from './button.types';
 
 const meta = {
 	title: 'Components/Button',
@@ -23,12 +20,10 @@ const meta = {
 		wide: { control: 'boolean' },
 		glass: { control: 'boolean' }
 	},
-	// This component will be used to render the children snippet
 	args: {
-		children: Snippet,
-		onclick: fn()
+		children: 'Click me'
 	}
-} satisfies Meta<Button>;
+} satisfies Meta<ButtonProps>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;

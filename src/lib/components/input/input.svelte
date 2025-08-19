@@ -9,7 +9,8 @@
 		value = '',
 		bordered = true,
 		ghost = false,
-		class: cx = ''
+		class: cx = '',
+		oninput
 	}: InputProps = $props();
 
 	let inputClass = $derived([

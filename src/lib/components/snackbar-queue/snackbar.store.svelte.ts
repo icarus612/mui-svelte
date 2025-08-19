@@ -1,7 +1,8 @@
 import { v4 as uuidv4 } from 'uuid';
 import type { Snackbar, SnackbarVariant } from './snackbar-queue.types';
 
-export const snackbarQueue = $state<Snackbar[]>([]);
+let _snackbarQueue = $state<Snackbar[]>([]);
+export const snackbarQueue = () => _snackbarQueue;
 
 type PushAlertOptions = {
 	title: string;
@@ -19,7 +20,7 @@ export function pushAlert(options: PushAlertOptions) {
 		variant: options.variant || 'info',
 		autoHide: options.autoHide === 0 ? undefined : options.autoHide || 5000
 	};
-	snackbarQueue.push(newSnackbar);
+	_snackbarQueue.push(newSnackbar);
 
 	if (newSnackbar.autoHide) {
 		setTimeout(() => {
@@ -29,8 +30,8 @@ export function pushAlert(options: PushAlertOptions) {
 }
 
 export function popAlert(id: string) {
-	const index = snackbarQueue.findIndex((s) => s.id === id);
+	const index = _snackbarQueue.findIndex((s) => s.id === id);
 	if (index > -1) {
-		snackbarQueue.splice(index, 1);
+		_snackbarQueue.splice(index, 1);
 	}
 }

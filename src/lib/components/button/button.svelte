@@ -2,8 +2,8 @@
 	import type { ButtonProps } from './button.types';
 
 	let {
-		variant,
-		size,
+		variant = 'primary',
+		size = 'md',
 		disabled = false,
 		outline = false,
 		wide = false,
@@ -25,5 +25,9 @@
 </script>
 
 <button class={buttonClass} {disabled} onclick={onclick}>
-	{@render children()}
+	{#if typeof children === 'string'}
+		{children}
+	{:else}
+		{@render children()}
+	{/if}
 </button>

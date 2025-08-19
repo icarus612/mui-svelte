@@ -1,17 +1,24 @@
 import type { Meta, StoryObj } from '@storybook/svelte';
-import Icon from './icon.svelte';
+import IconWrapper from './icon-wrapper.svelte';
 
 const meta = {
 	title: 'Components/Icon',
-	component: Icon,
+	component: IconWrapper,
 	tags: ['autodocs'],
 	argTypes: {
 		icon: {
 			control: 'text',
 			description: 'The name of the icon to display.',
+		},
+		class: {
+			control: 'text',
+			description: 'CSS classes to apply to the icon.',
 		}
-	}
-} satisfies Meta<Icon>;
+	},
+	args: {
+		icon: 'academic-cap'
+	} satisfies Record<string, any>
+} satisfies Meta;
 
 export default meta;
 type Story = StoryObj<typeof meta>;

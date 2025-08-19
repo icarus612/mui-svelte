@@ -1,24 +1,23 @@
 import { expect, test } from 'vitest';
 import { render, screen } from '@testing-library/svelte';
 import Button from './button.svelte';
-import Snippet from '../../stories/Snippet.svelte';
+import '@testing-library/jest-dom/vitest';
 
 test('renders button with children', () => {
 	render(Button, {
 		props: {
-			children: Snippet
+			children: 'Click me'
 		}
 	});
 
-	// There is no easy way to test the content of a snippet,
-	// so we just check if the button is rendered.
 	expect(screen.getByRole('button')).toBeInTheDocument();
+	expect(screen.getByText('Click me')).toBeInTheDocument();
 });
 
 test('button is disabled when disabled prop is true', () => {
 	render(Button, {
 		props: {
-			children: Snippet,
+			children: 'Click me',
 			disabled: true
 		}
 	});

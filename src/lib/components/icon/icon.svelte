@@ -14,8 +14,7 @@
 
 	$effect(() => {
 		if (icon) {
-			// @ts-expect-error - This is a dynamic import
-			import(`../../icons/${icon}.svelte?raw`).then(module => {
+			import(`../../icons/${icon}.svelte?raw`).then((module: any) => {
 				iconContent = module.default;
 			}).catch(err => {
 				console.error(`Failed to load icon: ${icon}`, err);

@@ -1,9 +1,11 @@
 <script lang="ts">
-	import { snackbarQueue, popAlert } from './snackbar.store';
+	import { snackbarQueue, popAlert } from './snackbar.store.svelte';
 	import type { Snackbar, SnackbarQueueProps, SnackbarVariant } from './snackbar-queue.types';
-	import { Icon } from '$lib/components/icon';
+	import Icon from '../icon/icon.svelte';
 
 	let { class: cx = '' }: SnackbarQueueProps = $props();
+	
+	const queue = $derived(snackbarQueue());
 
 	const variantMap = {
 		info: 'alert-info',
@@ -27,7 +29,7 @@
 </script>
 
 <div class={`fixed bottom-4 right-4 z-50 flex flex-col gap-4 ${cx}`}>
-	{@each snackbarQueue as snackbar (snackbar.id)}
+	{#each queue as snackbar (snackbar.id)}
 		<div role="alert" class={`alert ${variantMap[snackbar.variant]}`}>
 			<Icon icon={getIcon(snackbar.variant)} class="w-6 h-6" />
 			<div>

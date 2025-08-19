@@ -1,10 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/svelte';
-import Input from './input.svelte';
+import InputWrapper from './input-wrapper.svelte';
 import { fn } from '@storybook/test';
 
 const meta = {
 	title: 'Components/Input',
-	component: Input,
+	component: InputWrapper,
 	tags: ['autodocs'],
 	argTypes: {
 		variant: {
@@ -24,7 +24,7 @@ const meta = {
 	args: {
 		oninput: fn()
 	}
-} satisfies Meta<Input>;
+} satisfies Meta<InputWrapper>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
