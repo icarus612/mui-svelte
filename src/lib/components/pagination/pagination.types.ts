@@ -1,0 +1,21 @@
+import type { Snippet, $bindable } from '$lib/internal/types.js';
+export type PaginationProps = {
+	boundaryCount?: number;
+	color?: 'primary' | 'secondary' | 'standard';
+	count?: number;
+	defaultPage?: number;
+	disabled?: boolean;
+	getItemAriaLabel?: (type: string, page: number, selected: boolean) => string;
+	hideNextButton?: boolean;
+	hidePrevButton?: boolean;
+	page?: $bindable<number>;
+	shape?: 'circular' | 'rounded';
+	showFirstButton?: boolean;
+	showLastButton?: boolean;
+	siblingCount?: number;
+	size?: 'small' | 'medium' | 'large';
+	variant?: 'outlined' | 'text';
+	cx?: object;
+	onchange?: (page: number) => void;
+	item?: Snippet<[{ page: number; type: string; selected: boolean }]>;
+};

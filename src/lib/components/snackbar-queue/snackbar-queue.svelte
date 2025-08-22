@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { snackbarQueue, popAlert } from './snackbar.store.svelte';
-	import type { Snackbar, SnackbarQueueProps, SnackbarVariant } from './snackbar-queue.types';
+	import type { SnackbarItem, SnackbarQueueProps, SnackbarVariant } from './snackbar-queue.types';
 	import Icon from '../icon/icon.svelte';
 
 	let { class: cx = '' }: SnackbarQueueProps = $props();

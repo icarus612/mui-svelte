@@ -1,7 +1,7 @@
 import { v4 as uuidv4 } from 'uuid';
-import type { Snackbar, SnackbarVariant } from './snackbar-queue.types';
+import type { SnackbarItem, SnackbarVariant } from './snackbar-queue.types';
 
-let _snackbarQueue = $state<Snackbar[]>([]);
+let _snackbarQueue = $state<SnackbarItem[]>([]);
 export const snackbarQueue = () => _snackbarQueue;
 
 type PushAlertOptions = {
@@ -13,7 +13,7 @@ type PushAlertOptions = {
 
 export function pushAlert(options: PushAlertOptions) {
 	const id = uuidv4();
-	const newSnackbar: Snackbar = {
+	const newSnackbar: SnackbarItem = {
 		id,
 		title: options.title,
 		content: options.content,

@@ -1,0 +1,18 @@
+import type { Snippet, $bindable } from '$lib/internal/types.js';
+
+export type OtpInputProps = {
+	value?: $bindable<string>;
+	length?: number;
+	disabled?: boolean;
+	autoFocus?: boolean;
+	type?: 'text' | 'number' | 'password';
+	inputMode?: 'text' | 'numeric';
+	pattern?: RegExp;
+	placeholder?: string;
+	error?: boolean;
+	helperText?: string;
+	cx?: object;
+	onchange?: (value: string) => void;
+	oncomplete?: (value: string) => void;
+	separator?: Snippet;
+};

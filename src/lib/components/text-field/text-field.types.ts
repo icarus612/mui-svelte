@@ -1,0 +1,34 @@
+import type { Snippet, $bindable } from '$lib/internal/types.js';
+
+export type TextFieldProps = {
+	value?: $bindable<any>;
+	defaultValue?: any;
+	autoComplete?: string;
+	autoFocus?: boolean;
+	color?: 'primary' | 'secondary' | 'error' | 'info' | 'success' | 'warning';
+	disabled?: boolean;
+	error?: boolean;
+	fullWidth?: boolean;
+	helperText?: string;
+	id?: string;
+	label?: string;
+	margin?: 'dense' | 'none' | 'normal';
+	maxRows?: string | number;
+	minRows?: string | number;
+	multiline?: boolean;
+	name?: string;
+	placeholder?: string;
+	required?: boolean;
+	rows?: string | number;
+	select?: boolean;
+	size?: 'small' | 'medium';
+	type?: string;
+	variant?: 'filled' | 'outlined' | 'standard';
+	cx?: object;
+	onchange?: (event: Event) => void;
+	onblur?: (event: FocusEvent) => void;
+	onfocus?: (event: FocusEvent) => void;
+	oninput?: (event: Event) => void;
+	startAdornment?: Snippet;
+	endAdornment?: Snippet;
+};

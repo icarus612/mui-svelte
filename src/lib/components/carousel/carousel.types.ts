@@ -1,0 +1,36 @@
+import type { Snippet, $bindable } from '$lib/internal/types.js';
+
+export type CarouselProps = {
+	activeIndex?: $bindable<number>;
+	autoPlay?: boolean;
+	autoPlayInterval?: number;
+	pauseOnHover?: boolean;
+	infiniteLoop?: boolean;
+	showArrows?: boolean;
+	showStatus?: boolean;
+	showIndicators?: boolean;
+	showThumbs?: boolean;
+	thumbWidth?: number;
+	selectedItem?: number;
+	swipeable?: boolean;
+	transitionTime?: number;
+	swipeScrollTolerance?: number;
+	width?: string | number;
+	height?: string | number;
+	centerMode?: boolean;
+	centerSlidePercentage?: number;
+	cx?: object;
+	onactiveindexchange?: (index: number) => void;
+	onclickitem?: (index: number, item: any) => void;
+	onclickthumb?: (index: number, item: any) => void;
+	onchange?: (index: number, item: any) => void;
+	onswipestart?: (event: TouchEvent) => void;
+	onswipeend?: (event: TouchEvent) => void;
+	onswipemove?: (event: TouchEvent) => boolean;
+	children?: Snippet;
+	arrowPrev?: Snippet;
+	arrowNext?: Snippet;
+	indicator?: Snippet<[number, boolean]>;
+	item?: Snippet<[any, number]>;
+	thumb?: Snippet<[any, number]>;
+};

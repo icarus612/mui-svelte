@@ -1,6 +1,6 @@
 export type SnackbarVariant = 'info' | 'success' | 'warning' | 'error';
 
-export type Snackbar = {
+export type SnackbarItem = {
 	id: string;
 	title: string;
 	content?: string;
