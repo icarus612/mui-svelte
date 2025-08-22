@@ -1,0 +1,21 @@
+export type SelectProps<T = any> = {
+	value?: T | T[];
+	multiple?: boolean;
+	displayEmpty?: boolean;
+	defaultValue?: T | T[];
+	defaultOpen?: boolean;
+	autoWidth?: boolean;
+	id?: string;
+	label?: string;
+	native?: boolean;
+	open?: boolean;
+	variant?: 'filled' | 'outlined' | 'standard';
+	error?: boolean;
+	helperText?: string;
+	required?: boolean;
+	disabled?: boolean;
+	fullWidth?: boolean;
+	margin?: 'dense' | 'none' | 'normal';
+	size?: 'small' | 'medium';
+	class?: string;
+};

@@ -1,0 +1,15 @@
+export type ColorPickerProps = {
+	value?: string | { r: number; g: number; b: number; a?: number };
+	defaultValue?: string;
+	format?: 'hex' | 'rgb' | 'hsl' | 'hsv';
+	disabled?: boolean;
+	showAlpha?: boolean;
+	showPreview?: boolean;
+	presets?: string[];
+	placement?: 'top' | 'bottom' | 'left' | 'right';
+	showInput?: boolean;
+	showPalette?: boolean;
+	paletteColors?: string[][];
+	width?: number | string;
+	class?: string;
+};

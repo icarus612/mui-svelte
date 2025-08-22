@@ -1,0 +1,45 @@
+export type AutocompleteProps<T = any> = {
+	options: T[];
+	value?: T | T[] | null;
+	inputValue?: string;
+	multiple?: boolean;
+	freeSolo?: boolean;
+	disableClearable?: boolean;
+	clearOnBlur?: boolean;
+	clearOnEscape?: boolean;
+	disabled?: boolean;
+	loading?: boolean;
+	loadingText?: string;
+	noOptionsText?: string;
+	open?: boolean;
+	autoComplete?: boolean;
+	autoHighlight?: boolean;
+	autoSelect?: boolean;
+	blurOnSelect?: boolean | 'touch' | 'mouse';
+	clearIcon?: string; // slot name
+	clearText?: string;
+	closeText?: string;
+	defaultValue?: T | T[];
+	disableCloseOnSelect?: boolean;
+	disableListWrap?: boolean;
+	disablePortal?: boolean;
+	filterSelectedOptions?: boolean;
+	forcePopupIcon?: boolean | 'auto';
+	fullWidth?: boolean;
+	getOptionDisabled?: (option: T) => boolean;
+	getOptionLabel?: (option: T) => string;
+	groupBy?: (option: T) => string;
+	handleHomeEndKeys?: boolean;
+	id?: string;
+	includeInputInList?: boolean;
+	inputMode?: string;
+	isOptionEqualToValue?: (option: T, value: T) => boolean;
+	limitTags?: number;
+	openOnFocus?: boolean;
+	openText?: string;
+	popupIcon?: string; // slot name
+	readOnly?: boolean;
+	selectOnFocus?: boolean;
+	size?: 'small' | 'medium';
+	class?: string;
+};
