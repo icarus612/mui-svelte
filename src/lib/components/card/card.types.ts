@@ -1,8 +1,16 @@
-import type { Snippet } from '$lib/internal/types.js';
+import type { Snippet } from 'svelte';
+
+export type CardSize = 'xs' | 'sm' | 'md' | 'lg' | 'xl';
 
 export type CardProps = {
-	raised?: boolean;
-	variant?: 'elevation' | 'outlined';
+	bordered?: boolean;
+	dashed?: boolean;
+	imageFull?: boolean;
+	side?: boolean;
+	size?: CardSize;
 	class?: string;
-	children?: Snippet | string;
+	children: Snippet | string;
+	figure?: Snippet | string;
+	title?: Snippet | string;
+	actions?: Snippet | string;
 };

@@ -1,8 +1,36 @@
-import { describe, it, expect } from 'vitest';
-import { Carousel } from './index.js';
+import { expect, test } from 'vitest';
+import { render, screen } from '@testing-library/svelte';
+import Carousel from './carousel.svelte';
+import '@testing-library/jest-dom/vitest';
 
-describe('Carousel', () => {
-	it('should be a function', () => {
-		expect(typeof Carousel).toBe('function');
+test('renders carousel with children', () => {
+	render(Carousel, {
+		props: {
+			children: () => 'Carousel content'
+		}
 	});
+
+	expect(screen.getByText('Carousel content')).toBeInTheDocument();
+});
+
+test('applies snap class', () => {
+	const { container } = render(Carousel, {
+		props: {
+			snap: 'center',
+			children: () => 'Carousel content'
+		}
+	});
+
+	expect(container.firstChild).toHaveClass('carousel-center');
+});
+
+test('applies vertical class', () => {
+	const { container } = render(Carousel, {
+		props: {
+			vertical: true,
+			children: () => 'Carousel content'
+		}
+	});
+
+	expect(container.firstChild).toHaveClass('carousel-vertical');
 });

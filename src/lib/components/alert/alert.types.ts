@@ -1,17 +1,14 @@
-import type { Snippet } from '$lib/internal/types.js';
+import type { Snippet } from 'svelte';
 
-export type AlertColor = 'error' | 'info' | 'success' | 'warning';
-export type AlertVariant = 'filled' | 'outlined' | 'standard' | 'soft' | 'dash';
+export type AlertVariant = 'outline' | 'dash' | 'soft';
+export type AlertColor = 'info' | 'success' | 'warning' | 'error';
+export type AlertDirection = 'vertical' | 'horizontal';
 
 export type AlertProps = {
-	closeText?: string;
-	color?: AlertColor;
-	role?: string;
-	severity?: AlertColor;
 	variant?: AlertVariant;
+	color?: AlertColor;
+	direction?: AlertDirection;
 	class?: string;
-	onclose?: () => void;
-	children?: Snippet | string;
-	action?: Snippet | string;
-	icon?: Snippet | string;
+	children: Snippet | string;
+	icon?: string;
 };

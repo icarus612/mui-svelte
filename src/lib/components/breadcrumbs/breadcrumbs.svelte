@@ -2,20 +2,14 @@
 	import type { BreadcrumbsProps } from './breadcrumbs.types.js';
 
 	let {
-		'aria-label': ariaLabel = 'breadcrumb',
-		class: cx = '',
-		children
-	}: BreadcrumbsProps = $props();
+	'aria-label': ariaLabel = undefined,
+	expandText = undefined,
+	itemsAfterCollapse = undefined,
+	itemsBeforeCollapse = undefined,
+	maxItems = undefined,
+	separator = undefined,
+	cx = undefined,
+	children: childrenSnippet = undefined,
+	separatorSnippet = undefined
+} = $props();
 </script>
-
-<div class="text-sm breadcrumbs {cx}" aria-label={ariaLabel}>
-	<ul>
-		{#if children}
-			{#if typeof children === 'string'}
-				{@html children}
-			{:else}
-				{@render children()}
-			{/if}
-		{/if}
-	</ul>
-</div>

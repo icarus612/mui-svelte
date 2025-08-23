@@ -1,7 +1,8 @@
-import type { Snippet } from '$lib/internal/types.js';
-
+import type { Snippet, $bindable } from '$lib/internal/types.js';
 export type BottomNavigationProps = {
 	showLabels?: boolean;
-	class?: string;
-	children?: Snippet | string;
+	value?: $bindable<any>;
+	cx?: object;
+	onchange?: (value: any) => void;
+	children?: Snippet;
 };
