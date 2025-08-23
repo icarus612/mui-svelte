@@ -1,13 +1,17 @@
 import type { Snippet } from '$lib/internal/types.js';
+
+export type AlertColor = 'error' | 'info' | 'success' | 'warning';
+export type AlertVariant = 'filled' | 'outlined' | 'standard' | 'soft' | 'dash';
+
 export type AlertProps = {
 	closeText?: string;
-	color?: 'error' | 'info' | 'success' | 'warning';
+	color?: AlertColor;
 	role?: string;
-	severity?: 'error' | 'info' | 'success' | 'warning';
-	variant?: 'filled' | 'outlined' | 'standard';
-	cx?: object;
+	severity?: AlertColor;
+	variant?: AlertVariant;
+	class?: string;
 	onclose?: () => void;
-	children?: Snippet;
-	action?: Snippet;
-	icon?: Snippet;
+	children?: Snippet | string;
+	action?: Snippet | string;
+	icon?: Snippet | string;
 };
