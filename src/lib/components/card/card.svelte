@@ -1,27 +1,19 @@
 <script lang="ts">
-	import type { CardProps } from './card.types';
+	import type { CardProps } from './card.types.js';
 
 	let {
-		bordered,
-		dashed,
-		imageFull,
-		side,
-		size,
-		class: cx,
-		children,
-		figure,
-		title,
-		actions
+		raised = false,
+		variant = 'elevation',
+		class: cx = '',
+		children
 	}: CardProps = $props();
 
 	const cardClass = $derived(
 		[
 			'card',
-			bordered ? 'card-border' : '',
-			dashed ? 'card-dash' : '',
-			imageFull ? 'image-full' : '',
-			side ? 'card-side' : '',
-			size ? `card-${size}` : '',
+			'bg-base-100', // default background
+			variant === 'elevation' ? (raised ? 'shadow-xl' : 'shadow-sm') : '',
+			variant === 'outlined' ? 'card-border' : '',
 			cx
 		]
 			.join(' ')
@@ -30,38 +22,11 @@
 </script>
 
 <div class={cardClass}>
-	{#if figure}
-		<figure>
-			{#if typeof figure === 'string'}
-				{@html figure}
-			{:else}
-				{@render figure()}
-			{/if}
-		</figure>
-	{/if}
-	<div class="card-body">
-		{#if title}
-			<h2 class="card-title">
-				{#if typeof title === 'string'}
-					{title}
-				{:else}
-					{@render title()}
-				{/if}
-			</h2>
-		{/if}
+	{#if children}
 		{#if typeof children === 'string'}
-			<p>{children}</p>
+			{@html children}
 		{:else}
 			{@render children()}
 		{/if}
-		{#if actions}
-			<div class="card-actions">
-				{#if typeof actions === 'string'}
-					{@html actions}
-				{:else}
-					{@render actions()}
-				{/if}
-			</div>
-		{/if}
-	</div>
+	{/if}
 </div>

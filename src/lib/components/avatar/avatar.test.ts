@@ -1,64 +1,61 @@
-import { expect, test } from 'vitest';
+import { describe, it, expect } from 'vitest';
 import { render, screen } from '@testing-library/svelte';
 import Avatar from './avatar.svelte';
 import '@testing-library/jest-dom/vitest';
 
-test('renders image avatar', () => {
-	render(Avatar, {
-		props: {
-			src: 'https://img.daisyui.com/images/profile/demo/2@94.webp',
-			alt: 'Image avatar'
-		}
+describe('Avatar', () => {
+	it('should render an image avatar when src is provided', () => {
+		const { container } = render(Avatar, {
+			props: {
+				src: 'https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp',
+				alt: 'Test Avatar'
+			}
+		});
+
+		const img = screen.getByAltText('Test Avatar');
+		expect(img).toBeInTheDocument();
+		expect(img).toHaveAttribute(
+			'src',
+			'https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp'
+		);
+		expect(container.querySelector('.avatar')).toBeInTheDocument();
 	});
 
-	expect(screen.getByAltText('Image avatar')).toBeInTheDocument();
-});
+	it('should render a placeholder with text when no src is provided', () => {
+		const { container } = render(Avatar, {
+			props: {
+				children: 'JO'
+			}
+		});
 
-test('renders placeholder avatar', () => {
-	render(Avatar, {
-		props: {
-			placeholder: true,
-			text: 'AB'
-		}
+		expect(screen.getByText('JO')).toBeInTheDocument();
+		expect(container.querySelector('.avatar.placeholder')).toBeInTheDocument();
 	});
 
-	expect(screen.getByText('AB')).toBeInTheDocument();
-});
+	it('should apply variant classes correctly', () => {
+		const { container: containerCircular } = render(Avatar, {
+			props: { variant: 'circular' }
+		});
+		expect(containerCircular.querySelector('.w-24')).toHaveClass('rounded-full');
 
-test('applies shape class', () => {
-	const { container } = render(Avatar, {
-		props: {
-			shape: 'rounded-xl',
-			src: 'https://img.daisyui.com/images/profile/demo/2@94.webp'
-		}
+		const { container: containerRounded } = render(Avatar, {
+			props: { variant: 'rounded' }
+		});
+		expect(containerRounded.querySelector('.w-24')).toHaveClass('rounded-xl');
+
+		const { container: containerSquare } = render(Avatar, {
+			props: { variant: 'square' }
+		});
+		expect(containerSquare.querySelector('.w-24')).not.toHaveClass('rounded-full');
+		expect(containerSquare.querySelector('.w-24')).not.toHaveClass('rounded-xl');
 	});
 
-	expect(container.querySelector('.w-24')).toHaveClass('rounded-xl');
-});
-
-test('applies presence class', () => {
-	const { container } = render(Avatar, {
-		props: {
-			presence: 'online',
-			src: 'https://img.daisyui.com/images/profile/demo/2@94.webp'
-		}
+	it('should apply custom classes', () => {
+		const { container } = render(Avatar, {
+			props: {
+				class: 'custom-class'
+			}
+		});
+		expect(container.querySelector('.avatar')).toHaveClass('custom-class');
 	});
-
-	expect(container.firstChild).toHaveClass('avatar-online');
-});
-
-test('applies ring class', () => {
-	const { container } = render(Avatar, {
-		props: {
-			ring: true,
-			src: 'https://img.daisyui.com/images/profile/demo/2@94.webp'
-		}
-	});
-
-	expect(container.querySelector('.w-24')).toHaveClass(
-		'ring-primary',
-		'ring-offset-base-100',
-		'ring',
-		'ring-offset-2'
-	);
 });

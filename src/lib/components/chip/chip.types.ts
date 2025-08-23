@@ -2,13 +2,12 @@ import type { Snippet } from '$lib/internal/types.js';
 
 export type ChipProps = {
 	clickable?: boolean;
-	color?: 'default' | 'primary' | 'secondary' | 'error' | 'info' | 'success' | 'warning';
+	color?: 'default' | 'primary' | 'secondary' | 'accent' | 'neutral' | 'info' | 'success' | 'warning' | 'error';
 	disabled?: boolean;
 	label?: string;
-	size?: 'small' | 'medium';
-	skipFocusWhenDisabled?: boolean;
-	variant?: 'filled' | 'outlined';
-	cx?: object;
+	size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
+	variant?: 'filled' | 'outlined' | 'ghost' | 'soft' | 'dash';
+	class?: string;
 	ondelete?: (event: MouseEvent) => void;
 	onclick?: (event: MouseEvent) => void;
 	avatar?: Snippet;
