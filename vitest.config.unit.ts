@@ -24,6 +24,9 @@ export default defineConfig({
     global: 'globalThis',
   },
   resolve: {
-    conditions: ['browser']
+    conditions: ['browser'],
+    alias: {
+      '$lib': '/src/lib'
+    }
   }
 });
