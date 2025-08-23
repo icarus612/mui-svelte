@@ -1,14 +1,21 @@
-import type { Snippet } from '$lib/internal/types.js';
+import type { Snippet } from 'svelte';
+
+export type BadgeVariant = 'outline' | 'dash' | 'soft' | 'ghost';
+export type BadgeColor =
+	| 'neutral'
+	| 'primary'
+	| 'secondary'
+	| 'accent'
+	| 'info'
+	| 'success'
+	| 'warning'
+	| 'error';
+export type BadgeSize = 'xs' | 'sm' | 'md' | 'lg' | 'xl';
 
 export type BadgeProps = {
-	badgeContent?: string | number;
-	anchorOrigin?: { horizontal: 'left' | 'right' | 'center'; vertical: 'top' | 'bottom' | 'middle' };
-	color?: 'default' | 'primary' | 'secondary' | 'error' | 'info' | 'success' | 'warning';
-	invisible?: boolean;
-	max?: number;
-	overlap?: 'circular' | 'rectangular';
-	showZero?: boolean;
-	variant?: 'dot' | 'standard';
+	variant?: BadgeVariant;
+	color?: BadgeColor;
+	size?: BadgeSize;
 	class?: string;
-	children?: Snippet | string;
+	children: Snippet;
 };

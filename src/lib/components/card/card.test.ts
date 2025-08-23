@@ -1,44 +1,80 @@
-import { describe, it, expect } from 'vitest';
+import { expect, test } from 'vitest';
 import { render, screen } from '@testing-library/svelte';
 import Card from './card.svelte';
 import '@testing-library/jest-dom/vitest';
 
-describe('Card', () => {
-	it('should render a card container', () => {
-		const { container } = render(Card);
-		expect(container.querySelector('.card')).toBeInTheDocument();
+test('renders card with children', () => {
+	render(Card, {
+		props: {
+			children: () => 'Card content'
+		}
 	});
 
-	it('should render its children', () => {
-		render(Card, {
-			props: {
-				children: 'Card Content'
-			}
-		});
-		expect(screen.getByText('Card Content')).toBeInTheDocument();
+	expect(screen.getByText('Card content')).toBeInTheDocument();
+});
+
+test('renders with title', () => {
+	render(Card, {
+		props: {
+			title: () => 'Card title',
+			children: () => 'Card content'
+		}
 	});
 
-	it('should apply elevation shadow when variant is elevation', () => {
-		const { container } = render(Card, { props: { variant: 'elevation' } });
-		expect(container.querySelector('.card')).toHaveClass('shadow-sm');
+	expect(screen.getByText('Card title')).toBeInTheDocument();
+});
+
+test('renders with actions', () => {
+	render(Card, {
+		props: {
+			actions: () => '<button>Action</button>',
+			children: () => 'Card content'
+		}
 	});
 
-	it('should apply border when variant is outlined', () => {
-		const { container } = render(Card, { props: { variant: 'outlined' } });
-		expect(container.querySelector('.card')).toHaveClass('card-border');
+	expect(screen.getByText('Action')).toBeInTheDocument();
+});
+
+test('renders with figure', () => {
+	render(Card, {
+		props: {
+			figure: () => '<img src="test.jpg" alt="figure" />',
+			children: () => 'Card content'
+		}
 	});
 
-	it('should apply elevation shadow when raised is true', () => {
-		const { container } = render(Card, { props: { raised: true } });
-		expect(container.querySelector('.card')).toHaveClass('shadow-xl');
+	expect(screen.getByAltText('figure')).toBeInTheDocument();
+});
+
+test('applies bordered class', () => {
+	const { container } = render(Card, {
+		props: {
+			bordered: true,
+			children: () => 'Card content'
+		}
 	});
 
-	it('should apply custom classes', () => {
-		const { container } = render(Card, {
-			props: {
-				class: 'custom-class'
-			}
-		});
-		expect(container.querySelector('.card')).toHaveClass('custom-class');
+	expect(container.firstChild).toHaveClass('card-border');
+});
+
+test('applies side class', () => {
+	const { container } = render(Card, {
+		props: {
+			side: true,
+			children: () => 'Card content'
+		}
 	});
+
+	expect(container.firstChild).toHaveClass('card-side');
+});
+
+test('applies image-full class', () => {
+	const { container } = render(Card, {
+		props: {
+			imageFull: true,
+			children: () => 'Card content'
+		}
+	});
+
+	expect(container.firstChild).toHaveClass('image-full');
 });

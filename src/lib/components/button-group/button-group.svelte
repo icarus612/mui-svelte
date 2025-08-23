@@ -2,20 +2,17 @@
 	import type { ButtonGroupProps } from './button-group.types.js';
 
 	let {
-		orientation = 'horizontal',
-		class: cx = '',
-		children
-	}: ButtonGroupProps = $props();
-
-	const orientationClass = $derived(orientation === 'vertical' ? 'join-vertical' : 'join-horizontal');
+	color = undefined,
+	disabled = undefined,
+	disableElevation = undefined,
+	disableFocusRipple = undefined,
+	disableRipple = undefined,
+	fullWidth = undefined,
+	orientation = undefined,
+	size = undefined,
+	variant = undefined,
+	'aria-label': ariaLabel = undefined,
+	cx = undefined,
+	children: childrenSnippet = undefined
+} = $props();
 </script>
-
-<div class="join {orientationClass} {cx}">
-	{#if children}
-		{#if typeof children === 'string'}
-			{@html children}
-		{:else}
-			{@render children()}
-		{/if}
-	{/if}
-</div>

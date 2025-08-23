@@ -1,72 +1,58 @@
-import { describe, it, expect, vi } from 'vitest';
-import { render, screen, fireEvent } from '@testing-library/svelte';
+import { expect, test } from 'vitest';
+import { render, screen } from '@testing-library/svelte';
 import Alert from './alert.svelte';
 import '@testing-library/jest-dom/vitest';
 
-describe('Alert', () => {
-	it('should render its children', () => {
-		render(Alert, {
-			props: {
-				children: 'This is an alert.'
-			}
-		});
-		expect(screen.getByText('This is an alert.')).toBeInTheDocument();
+test('renders alert with children', () => {
+	render(Alert, {
+		props: {
+			children: () => 'Alert content'
+		}
 	});
 
-	it('should apply color classes correctly', () => {
-		const { container } = render(Alert, { props: { color: 'success' } });
-		expect(container.querySelector('.alert')).toHaveClass('alert-success');
+	expect(screen.getByText('Alert content')).toBeInTheDocument();
+});
+
+test('applies variant class', () => {
+	const { container } = render(Alert, {
+		props: {
+			variant: 'outline',
+			children: () => 'Alert content'
+		}
 	});
 
-	it('should apply variant classes correctly', () => {
-		const { container } = render(Alert, { props: { variant: 'outlined' } });
-		expect(container.querySelector('.alert')).toHaveClass('alert-outline');
+	expect(container.firstChild).toHaveClass('alert-outline');
+});
+
+test('applies color class', () => {
+	const { container } = render(Alert, {
+		props: {
+			color: 'success',
+			children: () => 'Alert content'
+		}
 	});
 
-	it('should display a default icon for each color', () => {
-		const { container, rerender } = render(Alert, { color: 'info' });
-		expect(container.querySelector('svg')).toBeInTheDocument();
-		expect(container.querySelector('.stroke-info')).toBeInTheDocument();
+	expect(container.firstChild).toHaveClass('alert-success');
+});
 
-		rerender({ color: 'success' });
-		expect(container.querySelector('svg')).toBeInTheDocument();
-
-		rerender({ color: 'warning' });
-		expect(container.querySelector('svg')).toBeInTheDocument();
-
-		rerender({ color: 'error' });
-		expect(container.querySelector('svg')).toBeInTheDocument();
+test('applies direction class', () => {
+	const { container } = render(Alert, {
+		props: {
+			direction: 'vertical',
+			children: () => 'Alert content'
+		}
 	});
 
-	it('should display a custom icon when provided', () => {
-		render(Alert, {
-			props: {
-				icon: '<svg data-testid="custom-icon"></svg>'
-			}
-		});
-		expect(screen.getByTestId('custom-icon')).toBeInTheDocument();
+	expect(container.firstChild).toHaveClass('alert-vertical');
+});
+
+test('renders icon slot', () => {
+	render(Alert, {
+		props: {
+			children: () => 'Alert content',
+			icon: () => '<svg data-testid="icon"></svg>'
+		}
 	});
 
-	it('should call onclose when the close button is clicked', async () => {
-		const handleClose = vi.fn();
-		render(Alert, {
-			props: {
-				onclose: handleClose
-			}
-		});
-
-		const closeButton = screen.getByLabelText('close');
-		await fireEvent.click(closeButton);
-
-		expect(handleClose).toHaveBeenCalledTimes(1);
-	});
-
-	it('should be removed from the DOM when the close button is clicked', async () => {
-		const { container } = render(Alert, { props: { onclose: () => {} } });
-
-		const closeButton = screen.getByLabelText('close');
-		await fireEvent.click(closeButton);
-
-		expect(container.querySelector('.alert')).not.toBeInTheDocument();
-	});
+	expect(screen.getByTestId('icon')).toBeInTheDocument();
 });

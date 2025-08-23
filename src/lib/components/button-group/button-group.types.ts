@@ -1,7 +1,16 @@
 import type { Snippet } from '$lib/internal/types.js';
 
 export type ButtonGroupProps = {
+	color?: 'inherit' | 'primary' | 'secondary' | 'success' | 'error' | 'info' | 'warning';
+	disabled?: boolean;
+	disableElevation?: boolean;
+	disableFocusRipple?: boolean;
+	disableRipple?: boolean;
+	fullWidth?: boolean;
 	orientation?: 'horizontal' | 'vertical';
-	class?: string;
-	children?: Snippet | string;
+	size?: 'small' | 'medium' | 'large';
+	variant?: 'contained' | 'outlined' | 'text';
+	'aria-label'?: string;
+	cx?: object;
+	children?: Snippet;
 };
