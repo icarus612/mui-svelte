@@ -1,39 +1,39 @@
 <script lang="ts">
-	import type { AvatarProps } from './avatar.types.js';
+	import type { AvatarProps } from './avatar.types';
 
 	let {
-		alt = '',
-		sizes = '',
-		src = '',
-		srcSet = '',
-		variant = 'circular',
-		class: cx = '',
-		children
+		shape = 'rounded-full',
+		size = 'w-24',
+		presence,
+		placeholder = false,
+		class: cx,
+		src,
+		alt,
+		text,
+		ring = false
 	}: AvatarProps = $props();
 
-	const variantClass = $derived(
-		variant === 'rounded'
-			? 'rounded-xl'
-			: variant === 'circular'
-			? 'rounded-full'
-			: ''
+	const avatarClass = $derived(
+		['avatar', presence ? `avatar-${presence}` : '', placeholder ? 'placeholder' : '', cx]
+			.join(' ')
+			.trim()
+	);
+
+	const imageClass = $derived(
+		[size, shape, ring ? 'ring-primary ring-offset-base-100 ring ring-offset-2' : '']
+			.join(' ')
+			.trim()
 	);
 </script>
 
-<div class="avatar {cx}" class:placeholder={!src}>
-	{#if src}
-		<div class="w-24 {variantClass}">
-			<img {src} {alt} {sizes} {srcSet} />
-		</div>
-	{:else}
-		<div class="w-24 bg-neutral text-neutral-content {variantClass}">
-			{#if children}
-				{#if typeof children === 'string'}
-					<span class="text-3xl">{children}</span>
-				{:else}
-					{@render children()}
-				{/if}
-			{/if}
-		</div>
-	{/if}
+<div class={avatarClass}>
+	<div class={imageClass}>
+		{#if placeholder}
+			<div class="bg-neutral text-neutral-content">
+				<span class="text-3xl">{text}</span>
+			</div>
+		{:else}
+			<img {src} {alt} />
+		{/if}
+	</div>
 </div>

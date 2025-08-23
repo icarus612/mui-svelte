@@ -1,13 +1,14 @@
-import type { Snippet } from '$lib/internal/types.js';
-
-export type AvatarVariant = 'circular' | 'rounded' | 'square';
+export type AvatarShape = 'rounded' | 'rounded-xl' | 'rounded-full';
+export type AvatarPresence = 'online' | 'offline';
 
 export type AvatarProps = {
-	alt?: string;
-	sizes?: string;
-	src?: string;
-	srcSet?: string;
-	variant?: AvatarVariant;
+	shape?: AvatarShape;
+	size?: string;
+	presence?: AvatarPresence;
+	placeholder?: boolean;
 	class?: string;
-	children?: Snippet | string;
+	src?: string;
+	alt?: string;
+	text?: string;
+	ring?: boolean;
 };
