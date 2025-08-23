@@ -1,0 +1,25 @@
+export type CalendarProps = {
+	value?: Date | null;
+	defaultValue?: Date;
+	views?: ('year' | 'month' | 'day')[];
+	openTo?: 'year' | 'month' | 'day';
+	disabled?: boolean;
+	readOnly?: boolean;
+	minDate?: Date;
+	maxDate?: Date;
+	shouldDisableDate?: (date: Date) => boolean;
+	shouldDisableMonth?: (date: Date) => boolean;
+	shouldDisableYear?: (date: Date) => boolean;
+	disableFuture?: boolean;
+	disableHighlightToday?: boolean;
+	disablePast?: boolean;
+	displayWeekNumber?: boolean;
+	fixedWeekNumber?: number;
+	focusedView?: 'year' | 'month' | 'day';
+	loading?: boolean;
+	monthsPerRow?: 3 | 4;
+	reduceAnimations?: boolean;
+	showDaysOutsideCurrentMonth?: boolean;
+	timezone?: string;
+	class?: string;
+};

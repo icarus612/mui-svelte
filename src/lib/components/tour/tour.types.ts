@@ -1,0 +1,44 @@
+export type TourStep = {
+	target: string | HTMLElement;
+	content: string;
+	title?: string;
+	placement?: 'top' | 'bottom' | 'left' | 'right' | 'auto';
+	disableBeacon?: boolean;
+	disableOverlay?: boolean;
+	disableScrolling?: boolean;
+	disableScrollParentFix?: boolean;
+	event?: string;
+	hideBackButton?: boolean;
+	hideCloseButton?: boolean;
+	hideFooter?: boolean;
+	isFixed?: boolean;
+	offset?: number;
+	showProgress?: boolean;
+	showSkipButton?: boolean;
+	spotlightClicks?: boolean;
+	spotlightPadding?: number;
+	styles?: object;
+};
+
+export type TourProps = {
+	steps: TourStep[];
+	run?: boolean;
+	stepIndex?: number;
+	continuous?: boolean;
+	showProgress?: boolean;
+	showSkipButton?: boolean;
+	scrollToFirstStep?: boolean;
+	scrollOffset?: number;
+	scrollDuration?: number;
+	disableCloseOnEsc?: boolean;
+	disableOverlay?: boolean;
+	disableOverlayClose?: boolean;
+	disableScrolling?: boolean;
+	hideBackButton?: boolean;
+	hideCloseButton?: boolean;
+	locale?: object;
+	spotlightClicks?: boolean;
+	spotlightPadding?: number;
+	styles?: object;
+	class?: string;
+};

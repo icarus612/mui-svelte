@@ -1,0 +1,27 @@
+export type TimePickerProps = {
+	value?: Date | null;
+	defaultValue?: Date;
+	open?: boolean;
+	disabled?: boolean;
+	readOnly?: boolean;
+	format?: string;
+	views?: ('hours' | 'minutes' | 'seconds')[];
+	openTo?: 'hours' | 'minutes' | 'seconds';
+	ampm?: boolean;
+	ampmInClock?: boolean;
+	disableFuture?: boolean;
+	disableIgnoringDatePartForTimeValidation?: boolean;
+	disableOpenPicker?: boolean;
+	disablePast?: boolean;
+	maxTime?: Date;
+	minTime?: Date;
+	minutesStep?: number;
+	orientation?: 'landscape' | 'portrait';
+	shouldDisableTime?: (value: Date, view: string) => boolean;
+	showToolbar?: boolean;
+	timezone?: string;
+	toolbarFormat?: string;
+	toolbarPlaceholder?: string;
+	toolbarTitle?: string;
+	class?: string;
+};

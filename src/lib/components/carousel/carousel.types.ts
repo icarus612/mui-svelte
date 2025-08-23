@@ -1,0 +1,21 @@
+export type CarouselProps = {
+	activeIndex?: number;
+	autoPlay?: boolean;
+	autoPlayInterval?: number;
+	pauseOnHover?: boolean;
+	infiniteLoop?: boolean;
+	showArrows?: boolean;
+	showStatus?: boolean;
+	showIndicators?: boolean;
+	showThumbs?: boolean;
+	thumbWidth?: number;
+	selectedItem?: number;
+	swipeable?: boolean;
+	transitionTime?: number;
+	swipeScrollTolerance?: number;
+	width?: string | number;
+	height?: string | number;
+	centerMode?: boolean;
+	centerSlidePercentage?: number;
+	class?: string;
+};

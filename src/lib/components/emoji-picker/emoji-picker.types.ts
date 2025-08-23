@@ -1,0 +1,20 @@
+export type EmojiPickerProps = {
+	autoFocusSearch?: boolean;
+	categories?: string[];
+	customEmojis?: object[];
+	defaultSkinTone?: '1F3FB' | '1F3FC' | '1F3FD' | '1F3FE' | '1F3FF';
+	emojiStyle?: 'apple' | 'google' | 'twitter' | 'facebook' | 'native';
+	emojiVersion?: string;
+	exceptEmojis?: string[];
+	height?: number | string;
+	lazyLoadEmojis?: boolean;
+	open?: boolean;
+	previewConfig?: object;
+	searchDisabled?: boolean;
+	searchPlaceholder?: string;
+	skinTonesDisabled?: boolean;
+	suggestedEmojisMode?: 'recent' | 'frequent';
+	theme?: 'light' | 'dark' | 'auto';
+	width?: number | string;
+	class?: string;
+};

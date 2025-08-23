@@ -1,0 +1,23 @@
+export type CodeEditorProps = {
+	value?: string;
+	language?: string;
+	theme?: string;
+	disabled?: boolean;
+	readOnly?: boolean;
+	lineNumbers?: boolean;
+	wordWrap?: boolean;
+	fontSize?: number;
+	tabSize?: number;
+	showGutter?: boolean;
+	highlightActiveLine?: boolean;
+	showPrintMargin?: boolean;
+	autoComplete?: boolean;
+	suggestions?: object[];
+	markers?: object[];
+	annotations?: object[];
+	height?: string | number;
+	width?: string | number;
+	minLines?: number;
+	maxLines?: number;
+	class?: string;
+};
