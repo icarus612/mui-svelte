@@ -1,7 +1,10 @@
 import type { Snippet } from '$lib/internal/types.js';
+
 export type CardProps = {
-	raised?: boolean;
-	variant?: 'elevation' | 'outlined';
-	cx?: object;
-	children?: Snippet;
+	bordered?: boolean;
+	imageFull?: boolean;
+	side?: boolean;
+	size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
+	class?: string;
+	children: Snippet;
 };

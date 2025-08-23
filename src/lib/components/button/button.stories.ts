@@ -18,7 +18,12 @@ const meta = {
 		disabled: { control: 'boolean' },
 		outline: { control: 'boolean' },
 		wide: { control: 'boolean' },
-		glass: { control: 'boolean' }
+		glass: { control: 'boolean' },
+		block: { control: 'boolean' },
+		square: { control: 'boolean' },
+		circle: { control: 'boolean' },
+		active: { control: 'boolean' },
+		loading: { control: 'boolean' }
 	},
 	args: {
 		children: 'Click me'
@@ -61,5 +66,38 @@ export const Disabled: Story = {
 export const Outline: Story = {
 	args: {
 		outline: true
+	}
+};
+
+export const Block: Story = {
+	args: {
+		block: true
+	}
+};
+
+export const Square: Story = {
+	args: {
+		square: true,
+		children: 'X'
+	}
+};
+
+export const Circle: Story = {
+	args: {
+		circle: true,
+		children: 'X'
+	}
+};
+
+export const Active: Story = {
+	args: {
+		active: true
+	}
+};
+
+export const Loading: Story = {
+	args: {
+		loading: true,
+		children: 'Loading'
 	}
 };

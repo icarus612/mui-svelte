@@ -10,6 +10,11 @@ export type ButtonProps = {
 	outline?: boolean;
 	wide?: boolean;
 	glass?: boolean;
+	block?: boolean;
+	square?: boolean;
+	circle?: boolean;
+	active?: boolean;
+	loading?: boolean;
 	class?: string;
 	children: Snippet | string;
 	onclick?: (event: MouseEvent) => void;
