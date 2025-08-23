@@ -1,5 +1,12 @@
+<<<<<<< HEAD
 export type SelectProps<T = any> = {
 	value?: T | T[];
+=======
+import type { Snippet, $bindable } from '$lib/internal/types.js';
+
+export type SelectProps<T> = {
+	value?: $bindable<T | T[]>;
+>>>>>>> main
 	multiple?: boolean;
 	displayEmpty?: boolean;
 	defaultValue?: T | T[];
@@ -8,7 +15,11 @@ export type SelectProps<T = any> = {
 	id?: string;
 	label?: string;
 	native?: boolean;
+<<<<<<< HEAD
 	open?: boolean;
+=======
+	open?: $bindable<boolean>;
+>>>>>>> main
 	variant?: 'filled' | 'outlined' | 'standard';
 	error?: boolean;
 	helperText?: string;
@@ -17,5 +28,14 @@ export type SelectProps<T = any> = {
 	fullWidth?: boolean;
 	margin?: 'dense' | 'none' | 'normal';
 	size?: 'small' | 'medium';
+<<<<<<< HEAD
 	class?: string;
+=======
+	cx?: object;
+	onchange?: (value: T | T[]) => void;
+	onopen?: () => void;
+	onclose?: () => void;
+	children?: Snippet;
+	icon?: Snippet;
+>>>>>>> main
 };

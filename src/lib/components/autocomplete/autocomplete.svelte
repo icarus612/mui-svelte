@@ -1,5 +1,65 @@
+<<<<<<< HEAD
 <script lang="ts">
 import type { AutocompleteProps } from './autocomplete.types';
 
 let { ...props }: AutocompleteProps = $props();
+=======
+<script lang="ts" generics="T">
+	import type { AutocompleteProps } from './autocomplete.types.js';
+
+	let {
+	options = undefined,
+	value = undefined,
+	inputValue = undefined,
+	multiple = undefined,
+	freeSolo = undefined,
+	disableClearable = undefined,
+	clearOnBlur = undefined,
+	clearOnEscape = undefined,
+	disabled = undefined,
+	loading = undefined,
+	loadingText = undefined,
+	noOptionsText = undefined,
+	open = undefined,
+	autoComplete = undefined,
+	autoHighlight = undefined,
+	autoSelect = undefined,
+	blurOnSelect = undefined,
+	clearText = undefined,
+	closeText = undefined,
+	defaultValue = undefined,
+	disableCloseOnSelect = undefined,
+	disableListWrap = undefined,
+	disablePortal = undefined,
+	filterSelectedOptions = undefined,
+	forcePopupIcon = undefined,
+	fullWidth = undefined,
+	getOptionDisabled = undefined,
+	getOptionLabel = undefined,
+	groupBy = undefined,
+	handleHomeEndKeys = undefined,
+	id = undefined,
+	includeInputInList = undefined,
+	inputMode = undefined,
+	isOptionEqualToValue = undefined,
+	limitTags = undefined,
+	openOnFocus = undefined,
+	openText = undefined,
+	readOnly = undefined,
+	selectOnFocus = undefined,
+	size = undefined,
+	cx = undefined,
+	onchange = undefined,
+	oninputchange = undefined,
+	onopen = undefined,
+	onclose = undefined,
+	children: childrenSnippet = undefined,
+	option = undefined,
+	tag = undefined,
+	loadingSnippet = undefined,
+	noOptions = undefined,
+	popupIcon = undefined,
+	clearIcon = undefined
+} = $props();
+>>>>>>> main
 </script>

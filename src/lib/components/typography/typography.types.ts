@@ -1,3 +1,8 @@
+<<<<<<< HEAD
+=======
+import type { Snippet } from '$lib/internal/types.js';
+
+>>>>>>> main
 export type TypographyProps = {
 	align?: 'center' | 'inherit' | 'justify' | 'left' | 'right';
 	color?: 'initial' | 'inherit' | 'primary' | 'secondary' | 'textPrimary' | 'textSecondary' | 'error';
@@ -19,5 +24,10 @@ export type TypographyProps = {
 		| 'overline'
 		| 'subtitle1'
 		| 'subtitle2';
+<<<<<<< HEAD
 	class?: string;
+=======
+	cx?: object;
+	children?: Snippet;
+>>>>>>> main
 };

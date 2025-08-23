@@ -1,10 +1,20 @@
 import type { Meta, StoryObj } from '@storybook/svelte';
+<<<<<<< HEAD
 import Table from './table.svelte';
 import type { TableProps } from './table.types';
 
 const meta = {
 	title: 'Components/Table',
 	component: Table
+=======
+import { Table } from './index.js';
+import type { TableProps } from './table.types.js';
+
+const meta = {
+	title: 'Components/Table',
+	component: Table,
+	tags: ['autodocs']
+>>>>>>> main
 } satisfies Meta<TableProps>;
 
 export default meta;

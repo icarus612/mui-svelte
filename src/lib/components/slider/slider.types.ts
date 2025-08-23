@@ -1,5 +1,12 @@
+<<<<<<< HEAD
 export type SliderProps = {
 	value?: number | number[];
+=======
+import type { Snippet, $bindable } from '$lib/internal/types.js';
+
+export type SliderProps = {
+	value?: $bindable<number | number[]>;
+>>>>>>> main
 	defaultValue?: number | number[];
 	disabled?: boolean;
 	disableSwap?: boolean;
@@ -18,5 +25,17 @@ export type SliderProps = {
 	valueLabelDisplay?: 'on' | 'auto' | 'off';
 	valueLabelFormat?: string | ((value: number, index: number) => string);
 	color?: 'primary' | 'secondary';
+<<<<<<< HEAD
 	class?: string;
+=======
+	cx?: object;
+	onchange?: (value: number | number[], activeThumb: number) => void;
+	onchangecommitted?: (value: number | number[]) => void;
+	thumb?: Snippet;
+	trackSnippet?: Snippet;
+	rail?: Snippet;
+	mark?: Snippet;
+	markLabel?: Snippet;
+	valueLabel?: Snippet;
+>>>>>>> main
 };

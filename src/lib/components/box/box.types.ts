@@ -1,3 +1,8 @@
+<<<<<<< HEAD
+=======
+import type { Snippet } from '$lib/internal/types.js';
+
+>>>>>>> main
 export type BoxProps = {
 	m?: number | string;
 	mt?: number | string;
@@ -38,5 +43,10 @@ export type BoxProps = {
 	bottom?: number | string;
 	left?: number | string;
 	boxShadow?: number | string;
+<<<<<<< HEAD
 	class?: string;
+=======
+	cx?: object;
+	children?: Snippet;
+>>>>>>> main
 };

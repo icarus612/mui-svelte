@@ -1,3 +1,8 @@
+<<<<<<< HEAD
+=======
+import type { Snippet } from '$lib/internal/types.js';
+
+>>>>>>> main
 export type BadgeProps = {
 	badgeContent?: string | number;
 	anchorOrigin?: { horizontal: 'left' | 'right'; vertical: 'top' | 'bottom' };
@@ -7,5 +12,10 @@ export type BadgeProps = {
 	overlap?: 'circular' | 'rectangular';
 	showZero?: boolean;
 	variant?: 'dot' | 'standard';
+<<<<<<< HEAD
 	class?: string;
+=======
+	cx?: object;
+	children?: Snippet;
+>>>>>>> main
 };

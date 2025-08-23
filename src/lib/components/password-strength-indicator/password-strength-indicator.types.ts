@@ -15,5 +15,10 @@ export type PasswordStrengthIndicatorProps = {
 	showRequirements?: boolean;
 	showScore?: boolean;
 	barHeight?: number;
+<<<<<<< HEAD
 	class?: string;
+=======
+	cx?: object;
+	onstrengthchange?: (strength: object) => void;
+>>>>>>> main
 };

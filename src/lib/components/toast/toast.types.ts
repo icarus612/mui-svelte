@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+import type { Snippet } from '$lib/internal/types.js';
+>>>>>>> main
 export type ToastProps = {
 	message?: string;
 	type?: 'success' | 'error' | 'warning' | 'info' | 'default';
@@ -11,5 +15,12 @@ export type ToastProps = {
 	progressBarColor?: string;
 	id?: string;
 	transition?: 'slide' | 'zoom' | 'fade' | 'flip';
+<<<<<<< HEAD
 	class?: string;
+=======
+	cx?: object;
+	onclose?: () => void;
+	action?: Snippet;
+	icon?: Snippet;
+>>>>>>> main
 };

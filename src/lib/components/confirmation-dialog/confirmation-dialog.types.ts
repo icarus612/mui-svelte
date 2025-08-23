@@ -1,5 +1,11 @@
+<<<<<<< HEAD
 export type ConfirmationDialogProps = {
 	open?: boolean;
+=======
+import type { $bindable } from '$lib/internal/types.js';
+export type ConfirmationDialogProps = {
+	open?: $bindable<boolean>;
+>>>>>>> main
 	title?: string;
 	message?: string;
 	confirmText?: string;
@@ -11,5 +17,11 @@ export type ConfirmationDialogProps = {
 	showCancel?: boolean;
 	loading?: boolean;
 	maxWidth?: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
+<<<<<<< HEAD
 	class?: string;
+=======
+	cx?: object;
+	onconfirm?: () => void;
+	oncancel?: () => void;
+>>>>>>> main
 };

@@ -1,5 +1,12 @@
+<<<<<<< HEAD
 export type TooltipProps = {
 	title: string;
+=======
+import type { Snippet, $bindable } from '$lib/internal/types.js';
+
+export type TooltipProps = {
+	title?: string;
+>>>>>>> main
 	arrow?: boolean;
 	describeChild?: boolean;
 	disableFocusListener?: boolean;
@@ -13,7 +20,11 @@ export type TooltipProps = {
 	id?: string;
 	leaveDelay?: number;
 	leaveTouchDelay?: number;
+<<<<<<< HEAD
 	open?: boolean;
+=======
+	open?: $bindable<boolean>;
+>>>>>>> main
 	placement?:
 		| 'bottom-end'
 		| 'bottom-start'
@@ -27,5 +38,12 @@ export type TooltipProps = {
 		| 'top-end'
 		| 'top-start'
 		| 'top';
+<<<<<<< HEAD
 	class?: string;
+=======
+	cx?: object;
+	onopen?: () => void;
+	onclose?: () => void;
+	children?: Snippet;
+>>>>>>> main
 };

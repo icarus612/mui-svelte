@@ -1,3 +1,8 @@
+<<<<<<< HEAD
+=======
+import type { Snippet } from '$lib/internal/types.js';
+
+>>>>>>> main
 export type ButtonGroupProps = {
 	color?: 'inherit' | 'primary' | 'secondary' | 'success' | 'error' | 'info' | 'warning';
 	disabled?: boolean;
@@ -9,5 +14,10 @@ export type ButtonGroupProps = {
 	size?: 'small' | 'medium' | 'large';
 	variant?: 'contained' | 'outlined' | 'text';
 	'aria-label'?: string;
+<<<<<<< HEAD
 	class?: string;
+=======
+	cx?: object;
+	children?: Snippet;
+>>>>>>> main
 };

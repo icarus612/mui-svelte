@@ -1,5 +1,6 @@
 export type ProgressProps = {
 	color?: 'inherit' | 'primary' | 'secondary' | 'error' | 'info' | 'success' | 'warning';
+<<<<<<< HEAD
 	disableShrink?: boolean; // Circular only
 	size?: number | string; // Circular only
 	thickness?: number; // Circular only
@@ -7,4 +8,13 @@ export type ProgressProps = {
 	variant?: 'determinate' | 'indeterminate' | 'buffer' | 'query'; // buffer and query for Linear only
 	valueBuffer?: number; // Linear only
 	class?: string;
+=======
+	disableShrink?: boolean;
+	size?: number | string;
+	thickness?: number;
+	value?: number;
+	variant?: 'determinate' | 'indeterminate' | 'buffer' | 'query';
+	valueBuffer?: number;
+	cx?: object;
+>>>>>>> main
 };
