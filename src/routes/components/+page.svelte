@@ -75,4 +75,23 @@
 			</div>
 		</Card>
 	</div>
+
+	<h2 class="text-xl font-bold mt-8">Chip</h2>
+	<div class="flex gap-4 items-center">
+		<Chip label="Default" />
+		<Chip label="Primary" color="primary" />
+		<Chip label="Secondary" color="secondary" variant="outlined" />
+		<Chip label="Deletable" ondelete={() => {}} />
+	</div>
+
+	<h2 class="text-xl font-bold mt-8">Divider</h2>
+	<div class="flex flex-col gap-4">
+		<Divider />
+		<Divider>OR</Divider>
+		<div class="flex w-full">
+			<div class="grid h-20 flex-grow card bg-base-300 rounded-box place-items-center">content</div>
+			<Divider orientation="horizontal">OR</Divider>
+			<div class="grid h-20 flex-grow card bg-base-300 rounded-box place-items-center">content</div>
+		</div>
+	</div>
 </div>

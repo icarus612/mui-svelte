@@ -1,2 +1,66 @@
 @import 'tailwindcss';
 @plugin 'daisyui';
+
+.chip {
+	@apply inline-flex items-center justify-center rounded-full px-3 py-1 text-sm font-medium;
+}
+
+.chip-filled {
+	@apply bg-gray-200 text-gray-800;
+}
+
+.chip-outlined {
+	@apply border border-gray-400 text-gray-800;
+}
+
+.chip-primary {
+	@apply bg-primary text-primary-content;
+}
+
+.chip-secondary {
+	@apply bg-secondary text-secondary-content;
+}
+
+.chip-error {
+	@apply bg-error text-error-content;
+}
+
+.chip-info {
+	@apply bg-info text-info-content;
+}
+
+.chip-success {
+	@apply bg-success text-success-content;
+}
+
+.chip-warning {
+	@apply bg-warning text-warning-content;
+}
+
+.chip-small {
+	@apply px-2 py-0.5 text-xs;
+}
+
+.chip-medium {
+	@apply px-3 py-1 text-sm;
+}
+
+.chip-clickable {
+	@apply cursor-pointer;
+}
+
+.chip-disabled {
+	@apply cursor-not-allowed opacity-50;
+}
+
+.chip-avatar {
+	@apply -ml-1 mr-2;
+}
+
+.chip-icon {
+	@apply -ml-1 mr-1.5;
+}
+
+.chip-delete {
+	@apply -mr-1 ml-1.5 cursor-pointer;
+}

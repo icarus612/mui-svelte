@@ -1,12 +1,9 @@
 import type { Snippet } from '$lib/internal/types.js';
 
 export type DividerProps = {
-	absolute?: boolean;
-	flexItem?: boolean;
-	light?: boolean;
+	color?: 'neutral' | 'primary' | 'secondary' | 'accent' | 'success' | 'warning' | 'info' | 'error';
 	orientation?: 'horizontal' | 'vertical';
-	textAlign?: 'center' | 'left' | 'right';
-	variant?: 'fullWidth' | 'inset' | 'middle';
-	cx?: object;
+	position?: 'start' | 'end';
+	class?: string;
 	children?: Snippet;
 };
